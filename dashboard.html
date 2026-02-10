@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Gmail Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #2c3e50;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        .Work { color: green; font-weight: bold; }
+        .Spam { color: red; font-weight: bold; }
+        .Urgent { color: orange; font-weight: bold; }
+        .Personal { color: blue; font-weight: bold; }
+
+        button {
+            padding: 10px 15px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        button:hover {
+            background: #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>📬 AI Gmail Classifier Dashboard</h2>
+
+<button onclick="loadEmails()">Fetch & Classify Emails</button>
+
+<table id="emailTable">
+    <tr>
+        <th>Subject</th>
+        <th>From</th>
+        <th>Category</th>
+        <th>Confidence</th>
+    </tr>
+</table>
+
+<script>
+
+async function loadEmails() {
+
+    const table = document.getElementById("emailTable");
+
+    // clear old rows
+    table.innerHTML = `
+        <tr>
+            <th>Subject</th>
+            <th>From</th>
+            <th>Category</th>
+            <th>Confidence</th>
+        </tr>
+    `;
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/classify-emails");
+        const data = await response.json();
+
+        data.emails.forEach(mail => {
+
+            let row = table.insertRow();
+
+            row.insertCell(0).innerText = mail.subject;
+            row.insertCell(1).innerText = mail.from;
+
+            let categoryCell = row.insertCell(2);
+            categoryCell.innerText = mail.category;
+            categoryCell.className = mail.category;
+
+            row.insertCell(3).innerText = JSON.stringify(mail.confidence);
+
+        });
+
+    } catch (err) {
+        alert("Error connecting to API. Is FastAPI running?");
+        console.error(err);
+    }
+}
+
+</script>
+
+</body>
+</html>
