@@ -137,7 +137,8 @@ EMAIL_ACCOUNT=your_email@gmail.com
 EMAIL_APP_PASSWORD=your_app_password
 ```
 
-📌 Why This Project Stands Out
+##📌 Why This Project Stands Out
+
 Real-world automation (not just ML model)
 Integrates AI with Gmail system
 Uses zero-shot learning (no dataset required)
@@ -146,12 +147,18 @@ Read → Classify → Act → Respond
 
 👉 Shows strong system design + AI integration skills
 
-🔮 Future Improvements
+##🔮 Future Improvements
+
 Add email priority scoring
 Auto calendar scheduling
 Gmail OAuth (secure login)
 Deploy on cloud (AWS / GCP)
 Add database for email history
-👨‍💻 Author
+
+##👨‍💻 Author
 
 Aditya Gaur
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
