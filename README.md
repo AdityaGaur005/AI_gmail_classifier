@@ -92,51 +92,50 @@ Response Example:
 }
 ```
 
+## 🖥️ Frontend Dashboard
 
-🖥️ Frontend Dashboard
-Displays classified emails in a table
-Highlights categories using colors:
-🟢 Work
-🔴 Spam
-🟠 Urgent
-🔵 Personal
-Fetch button to load latest emails
+- Displays classified emails in a table  
+- Highlights categories using colors:
+  - 🟢 Work  
+  - 🔴 Spam  
+  - 🟠 Urgent  
+  - 🔵 Personal  
+- Fetch button to load latest emails  
 
-🛠️ Tech Stack
-Backend
-Python
-FastAPI
-IMAP / SMTP
-AI / NLP
-HuggingFace Transformers
-BART (Zero-shot classification)
-FLAN-T5 / GPT-2 (text generation)
-Email Processing
-imaplib
-smtplib
-BeautifulSoup
-Frontend
-HTML
-CSS
-JavaScript
+---
 
+## 🛠️ Tech Stack
 
-🔐 Configuration
+### Backend
+- Python  
+- FastAPI  
+- IMAP / SMTP  
+
+### AI / NLP
+- HuggingFace Transformers  
+- BART (Zero-shot classification)  
+- FLAN-T5 / GPT-2 (text generation)  
+
+### Email Processing
+- imaplib  
+- smtplib  
+- BeautifulSoup  
+
+### Frontend
+- HTML  
+- CSS  
+- JavaScript  
+
+---
+
+## 🔐 Configuration
 
 Set your email credentials using environment variables:
 
+```bash
 EMAIL_ACCOUNT=your_email@gmail.com
 EMAIL_APP_PASSWORD=your_app_password
-📦 Installation
-git clone <repo-url>
-cd gmail-ai-classifier
-pip install -r requirements.txt
-▶️ Run Project
-Start backend:
-uvicorn main:app --reload
-Open frontend:
-
-Open HTML file in browser
+```
 
 📌 Why This Project Stands Out
 Real-world automation (not just ML model)
@@ -153,8 +152,6 @@ Auto calendar scheduling
 Gmail OAuth (secure login)
 Deploy on cloud (AWS / GCP)
 Add database for email history
-
-
 👨‍💻 Author
+
 Aditya Gaur
-BTech | Cloud & AI Enthusiast
